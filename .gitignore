@@ -1,0 +1,18 @@
+# Ignorer l'environnement virtuel Python
+venv/
+__pycache__/
+*.pyc
+
+# Ignorer les données et les logs
+*.log
+*.data
+movieslens/
+
+# Ignorer les fichiers systèmes et IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Ignorer les résultats Spark (s'ils sont écrits ici par erreur)
+results/
+checkpoints/
